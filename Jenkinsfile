@@ -13,7 +13,7 @@ pipeline {
         }
         stage('CODE CHECKOUT') {
             steps {
-                git branch:'main' , url:'https://github.com/pallavideorankar/devops_real_time_project_1.git'
+                git branch:'main' , url:'https://github.com/sushil2111/Project-01'
                 
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.projectName=$JOB_NAME \
                     -Dsonar.projectKey=$JOB_NAME \
-                    -Dsonar.host.url=http://3.10.23.77:9000 \
+                    -Dsonar.host.url=http://34.228.12.12/:9000 \
                     -Dsonar.token=$sonar_token'
             }
         } 
