@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: pallavid144/image-name:latest        
+        image: sushil2111/image-name:latest        
         ports:
         - containerPort: 8080        
         readinessProbe:
