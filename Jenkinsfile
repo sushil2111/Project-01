@@ -13,7 +13,7 @@ pipeline {
         }
         stage('CODE CHECKOUT') {
             steps {
-                git branch:'main' , url:'https://github.com/pallavideorankar/devops_real_time_project_1.git'
+                git branch:'main' , url:'https://github.com/sushil2111/Project-01.git'
                 
             }
         }
