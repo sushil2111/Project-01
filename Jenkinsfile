@@ -44,7 +44,12 @@ pipeline {
         } 
         stage('COPY JAR & DOCKERFILE') {
             steps {
-                sh 'ansible-playbook playbooks/create_directory.yml'
+                withCredentials([file(credentialsId: 'ssh-key-id', variable: 'SSH_KEY')]) {
+                    sh '''
+                    ansible-playbook playbooks/create_directory.yml \
+                        --private-key=$SSH_KEY
+                    '''
+                }
             }
         }
         stage('PUSH IMAGE ON DOCKERHUB') {
