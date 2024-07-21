@@ -7,14 +7,14 @@
       file:
         path: /opt/docker
         state: directory
-        mode: "0755"      
+        mode: "0755"
 
     - name: COPY DOCKERFILE
       copy:
-        src: ../Dockerfile
+        src: Dockerfile  # Ensure this path is correct relative to playbook location
         dest: /opt/docker
 
     - name: COPY WAR FILE
       copy:
-        src: ../webapp/target/webapp.war
+        src: webapp/target/webapp.war  # Ensure this path is correct relative to playbook location
         dest: /opt/docker
